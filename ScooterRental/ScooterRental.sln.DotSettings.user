@@ -1,0 +1,20 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/Environment/Highlighting/HighlightingSourceSnapshotLocation/@EntryValue">C:\Users\Rihards-PC\AppData\Local\Temp\JetBrains\ReSharperPlatformVs16\vAny_dbcd048e\CoverageData\_ScooterRental.15050646\Snapshot\snapshot.utdcvr</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=53a3c1fe_002Db6b3_002D4332_002D800c_002D000c59554602/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="CalculateIncome_CalculateIncomeFor2021YearNotIncludeAllServices_Expected" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;MSTest::52428381-8ADD-4FB7-91FB-1882F5B06ABB::net5.0::ScooterRentalTests.RentalCompanyTests.CalculateIncome_CalculateIncomeFor2021YearNotIncludeAllServices_Expected&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=8af644a6_002D7af2_002D46a3_002D8ccf_002D4dbcfa863c20/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="StartRent_StartRentForUsedScooter_ScooterIsInRentException" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;Solution /&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=af887efb_002D7fd1_002D4560_002Db4a2_002D6846d3b2c0aa/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="AddScoooter_Id2PricePerMinute4_ExpectedScooterList" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;Solution /&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	
+	
+	
+	
+	
+	</wpf:ResourceDictionary>
