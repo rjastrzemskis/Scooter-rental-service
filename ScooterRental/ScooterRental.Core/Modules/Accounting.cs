@@ -21,7 +21,7 @@ namespace ScooterRental.Core.Modules
 
             RentalData? rentedScooter = _rentalDataList.LastOrDefault(x => x.Id == id);
             decimal priceForOneDay = 20.0m, price = 0.0m;
-            TimeSpan? interval = rentedScooter.EndTime - rentedScooter.StarTime;
+            TimeSpan? rentPeriod = rentedScooter.EndTime - rentedScooter.StarTime;
             if (rentedScooter.StarTime.Date != rentedScooter.EndTime.Value.Date)
             {
                 if (rentedScooter.StarTime.TimeOfDay != rentedScooter.EndTime.Value.TimeOfDay)
@@ -32,18 +32,18 @@ namespace ScooterRental.Core.Modules
                     price += firstDayPrice > priceForOneDay ? priceForOneDay : firstDayPrice;
                     decimal lastDayPrice = (decimal)lastDay.Value.TotalMinutes * rentedScooter.PricePerMinute;
                     price += lastDayPrice > priceForOneDay ? priceForOneDay : lastDayPrice;
-                    int totalDaysLeft = (int)interval.Value.Subtract(firstDay).Subtract(lastDay.Value).TotalDays;
+                    int totalDaysLeft = (int)rentPeriod.Value.Subtract(firstDay).Subtract(lastDay.Value).TotalDays;
                     price += totalDaysLeft * priceForOneDay;
                     return price;
                 }
 
-                int totalDaysIfTimeIsSame = (int)interval?.TotalDays;
+                int totalDaysIfTimeIsSame = (int)rentPeriod?.TotalDays;
                 return priceForOneDay * totalDaysIfTimeIsSame;
             }
 
-            decimal lessThan20MinAndInOneDay = (decimal)interval?.TotalMinutes;
-            if (lessThan20MinAndInOneDay < priceForOneDay)
-                return rentedScooter.PricePerMinute * lessThan20MinAndInOneDay;
+            decimal lessThan20EuroAndInOneDay = (decimal)rentPeriod?.TotalMinutes;
+            if (lessThan20EuroAndInOneDay < priceForOneDay)
+                return rentedScooter.PricePerMinute * lessThan20EuroAndInOneDay;
 
             return priceForOneDay;
         }
@@ -51,7 +51,7 @@ namespace ScooterRental.Core.Modules
         public decimal IncomeCounting(DateTime starTime, DateTime? endTime, decimal pricePerMinute)
         {
             decimal priceForOneDay = 20.0m, price = 0.0m;
-            TimeSpan? interval = endTime - starTime;
+            TimeSpan? rentPeriod = endTime - starTime;
             if (starTime.Date != endTime.Value.Date)
             {
                 if (starTime.TimeOfDay != endTime.Value.TimeOfDay)
@@ -62,18 +62,18 @@ namespace ScooterRental.Core.Modules
                     price += firstDayPrice > priceForOneDay ? priceForOneDay : firstDayPrice;
                     decimal lastDayPrice = (decimal)lastDay.Value.TotalMinutes * pricePerMinute;
                     price += lastDayPrice > priceForOneDay ? priceForOneDay : lastDayPrice;
-                    int totalDaysLeft = (int)interval.Value.Subtract(firstDay).Subtract(lastDay.Value).TotalDays;
+                    int totalDaysLeft = (int)rentPeriod.Value.Subtract(firstDay).Subtract(lastDay.Value).TotalDays;
                     price += totalDaysLeft * priceForOneDay;
                     return price;
                 }
 
-                int totalDaysIfTimeIsSame = (int)interval?.TotalDays;
+                int totalDaysIfTimeIsSame = (int)rentPeriod?.TotalDays;
                 return priceForOneDay * totalDaysIfTimeIsSame;
             }
 
-            decimal lessThan20MinAndInOneDay = (decimal)interval?.TotalMinutes;
-            if (lessThan20MinAndInOneDay < priceForOneDay)
-                return pricePerMinute * lessThan20MinAndInOneDay;
+            decimal lessThan20EuroAndInOneDay = (decimal)rentPeriod?.TotalMinutes;
+            if (lessThan20EuroAndInOneDay < priceForOneDay)
+                return pricePerMinute * lessThan20EuroAndInOneDay;
 
             return priceForOneDay;
         }

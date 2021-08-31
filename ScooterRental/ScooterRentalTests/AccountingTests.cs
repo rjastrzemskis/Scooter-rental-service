@@ -47,7 +47,7 @@ namespace ScooterRentalTests
             decimal result = _accounting.CalculateBill(id);
 
             //Assert
-            Assert.AreEqual(10, result);
+            Assert.AreEqual(10.0m, result);
         }
 
         [TestMethod]
@@ -63,7 +63,7 @@ namespace ScooterRentalTests
             decimal result = _accounting.CalculateBill(id);
 
             //Assert
-            Assert.AreEqual(20, result);
+            Assert.AreEqual(20.0m, result);
         }
 
         [TestMethod]
@@ -79,7 +79,7 @@ namespace ScooterRentalTests
             decimal result = _accounting.CalculateBill(id);
 
             //Assert
-            Assert.AreEqual(60, result);
+            Assert.AreEqual(60.0m, result);
         }
 
         [TestMethod]
