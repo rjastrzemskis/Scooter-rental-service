@@ -48,7 +48,7 @@ namespace ScooterRental.Core.Modules
             return priceForOneDay;
         }
 
-        public decimal IncomeCounting(System.DateTime starTime, System.DateTime? endTime, decimal pricePerMinute)
+        public decimal IncomeCounting(DateTime starTime, DateTime? endTime, decimal pricePerMinute)
         {
             decimal priceForOneDay = 20.0m, price = 0.0m;
             TimeSpan? interval = endTime - starTime;

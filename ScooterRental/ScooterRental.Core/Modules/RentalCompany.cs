@@ -61,43 +61,29 @@ namespace ScooterRental.Core.Modules
             {
                 if (year != null)
                 {
-                    if (includeNotCompletedRentals)
-                    {
-                        if (data.StarTime.Year == year)
-                        {
-                            if (data.EndTime.Value <= endTimeNow)
-                                income += _accounting.IncomeCounting(data.StarTime, data.EndTime, data.PricePerMinute);
-
-                            else income += _accounting.IncomeCounting(data.StarTime, endTimeNow, data.PricePerMinute);
-                        }
-                    }
-                    else
-                    {
-                        if (data.StarTime.Year == year)
-                        {
-                            if (data.EndTime.Value <= endTimeNow)
-                                income += _accounting.IncomeCounting(data.StarTime, data.EndTime, data.PricePerMinute);
-                        }
-                    }
-                }
-                else
-                {
-                    if (includeNotCompletedRentals)
+                    if (includeNotCompletedRentals && data.StarTime.Year == year)
                     {
                         if (data.EndTime.Value <= endTimeNow)
                             income += _accounting.IncomeCounting(data.StarTime, data.EndTime, data.PricePerMinute);
 
                         else income += _accounting.IncomeCounting(data.StarTime, endTimeNow, data.PricePerMinute);
                     }
-                    else
-                    {
-                        if (data.EndTime.Value <= endTimeNow)
-                            income += _accounting.IncomeCounting(data.StarTime, data.EndTime, data.PricePerMinute);
-                    }
+                    else if (data.StarTime.Year == year && data.EndTime.Value <= endTimeNow)
+                        income += _accounting.IncomeCounting(data.StarTime, data.EndTime, data.PricePerMinute);
                 }
+                else if (includeNotCompletedRentals)
+                {
+                    if (data.EndTime.Value <= endTimeNow)
+                        income += _accounting.IncomeCounting(data.StarTime, data.EndTime, data.PricePerMinute);
+
+                    else income += _accounting.IncomeCounting(data.StarTime, endTimeNow, data.PricePerMinute);
+                }
+                else if (data.EndTime.Value <= endTimeNow)
+                    income += _accounting.IncomeCounting(data.StarTime, data.EndTime, data.PricePerMinute);
             }
 
             return income;
         }
     }
 }
+
