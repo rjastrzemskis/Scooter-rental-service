@@ -13,6 +13,5 @@
         public decimal PricePerMinute { get; }
 
         public bool IsRented { get; set; }
-
     }
 }

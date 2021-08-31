@@ -160,31 +160,30 @@ namespace ScooterRentalTests
         }
 
         [TestMethod]
-        public void CalculateIncome_CalculateIncomeFor2021YearIncludeAllServices_Expected45()
+        public void CalculateIncome_CalculateIncomeFor2021YearIncludeAllServices_Expected65()
         {
             //Arrange
             DateTime startTime1 = new DateTime(2021, 9, 27, 22, 20, 0);
             _rentalDataList.Add(new RentalData
-            { Id = "1", PricePerMinute = 1, StarTime = startTime1, EndTime = startTime1.AddMinutes(10) });
+                { Id = "1", PricePerMinute = 1, StarTime = startTime1, EndTime = startTime1.AddMinutes(10) });
 
             DateTime startTime2 = new DateTime(2021, 9, 28, 23, 45, 0);
             _rentalDataList.Add(new RentalData
-            { Id = "2", PricePerMinute = 1, StarTime = startTime2, EndTime = startTime2.AddHours(5) });
+                { Id = "2", PricePerMinute = 1, StarTime = startTime2, EndTime = startTime2.AddHours(5) });
 
             DateTime startTime3 = new DateTime(2020, 9, 29, 23, 45, 0);
             _rentalDataList.Add(new RentalData
-            { Id = "3", PricePerMinute = 1, StarTime = startTime3, EndTime = startTime3.AddMinutes(10) });
+                { Id = "3", PricePerMinute = 1, StarTime = startTime3, EndTime = startTime3.AddMinutes(10) });
 
             DateTime startTime4 = new DateTime(2021, 9, 29, 01, 00, 0);
             _rentalDataList.Add(new RentalData
-            { Id = "4", PricePerMinute = 1, StarTime = startTime4, EndTime = startTime4.AddHours(5) });
+                { Id = "4", PricePerMinute = 1, StarTime = startTime4, EndTime = startTime4.AddHours(5) });
 
             //Act
             decimal result = _company.CalculateIncome(2021, true);
 
             //Assert
             Assert.AreEqual(65, result);
-
         }
 
         [TestMethod]
@@ -193,22 +192,21 @@ namespace ScooterRentalTests
             //Arrange
             DateTime startTime1 = new DateTime(2021, 9, 27, 22, 20, 0);
             _rentalDataList.Add(new RentalData
-            { Id = "1", PricePerMinute = 1, StarTime = startTime1, EndTime = startTime1.AddMinutes(10) });
+                { Id = "1", PricePerMinute = 1, StarTime = startTime1, EndTime = startTime1.AddMinutes(10) });
 
             DateTime startTime2 = new DateTime(2021, 9, 28, 23, 45, 0);
             _rentalDataList.Add(new RentalData
-            { Id = "2", PricePerMinute = 1, StarTime = startTime2, EndTime = startTime2.AddHours(5) });
+                { Id = "2", PricePerMinute = 1, StarTime = startTime2, EndTime = startTime2.AddHours(5) });
 
             DateTime startTime3 = new DateTime(2020, 9, 29, 23, 45, 0);
             _rentalDataList.Add(new RentalData
-            { Id = "3", PricePerMinute = 1, StarTime = startTime3, EndTime = startTime3.AddMinutes(10) });
+                { Id = "3", PricePerMinute = 1, StarTime = startTime3, EndTime = startTime3.AddMinutes(10) });
 
             //Act
             decimal result = _company.CalculateIncome(2021, false);
 
             //Assert
             Assert.AreEqual(10, result);
-
         }
 
         [TestMethod]
@@ -217,22 +215,21 @@ namespace ScooterRentalTests
             //Arrange
             DateTime startTime1 = new DateTime(2021, 9, 27, 22, 20, 0);
             _rentalDataList.Add(new RentalData
-            { Id = "1", PricePerMinute = 1, StarTime = startTime1, EndTime = startTime1.AddMinutes(10) });
+                { Id = "1", PricePerMinute = 1, StarTime = startTime1, EndTime = startTime1.AddMinutes(10) });
 
             DateTime startTime2 = new DateTime(2021, 9, 28, 23, 45, 0);
             _rentalDataList.Add(new RentalData
-            { Id = "2", PricePerMinute = 1, StarTime = startTime2, EndTime = startTime2.AddHours(5) });
+                { Id = "2", PricePerMinute = 1, StarTime = startTime2, EndTime = startTime2.AddHours(5) });
 
             DateTime startTime3 = new DateTime(2020, 9, 29, 23, 45, 0);
             _rentalDataList.Add(new RentalData
-            { Id = "3", PricePerMinute = 1, StarTime = startTime3, EndTime = startTime3.AddMinutes(10) });
+                { Id = "3", PricePerMinute = 1, StarTime = startTime3, EndTime = startTime3.AddMinutes(10) });
 
             //Act
             decimal result = _company.CalculateIncome(null, true);
 
             //Assert
             Assert.AreEqual(55, result);
-
         }
 
         [TestMethod]
@@ -241,26 +238,25 @@ namespace ScooterRentalTests
             //Arrange
             DateTime startTime1 = new DateTime(2021, 9, 27, 22, 20, 0);
             _rentalDataList.Add(new RentalData
-            { Id = "1", PricePerMinute = 1, StarTime = startTime1, EndTime = startTime1.AddMinutes(10) });
+                { Id = "1", PricePerMinute = 1, StarTime = startTime1, EndTime = startTime1.AddMinutes(10) });
 
             DateTime startTime2 = new DateTime(2021, 9, 28, 23, 45, 0);
             _rentalDataList.Add(new RentalData
-            { Id = "2", PricePerMinute = 1, StarTime = startTime2, EndTime = startTime2.AddHours(5) });
+                { Id = "2", PricePerMinute = 1, StarTime = startTime2, EndTime = startTime2.AddHours(5) });
 
             DateTime startTime3 = new DateTime(2020, 9, 29, 23, 45, 0);
             _rentalDataList.Add(new RentalData
-            { Id = "3", PricePerMinute = 1, StarTime = startTime3, EndTime = startTime3.AddMinutes(10) });
+                { Id = "3", PricePerMinute = 1, StarTime = startTime3, EndTime = startTime3.AddMinutes(10) });
 
             //Act
             decimal result = _company.CalculateIncome(null, false);
 
             //Assert
             Assert.AreEqual(20, result);
-
         }
 
         [TestMethod]
-        public void CalculateIncome_CalculateIncomeForNullYearIncludeAllServicesForSameIdMultiple_Expected20()
+        public void CalculateIncome_CalculateIncomeForNullYearIncludeAllServicesForSameIdMultiple_Expected50()
         {
             //Arrange
             DateTime startTime1 = new DateTime(2021, 9, 27, 22, 20, 0);
@@ -275,12 +271,15 @@ namespace ScooterRentalTests
             _rentalDataList.Add(new RentalData
                 { Id = "1", PricePerMinute = 1, StarTime = startTime3, EndTime = startTime3.AddMinutes(20) });
 
+            DateTime startTime4 = new DateTime(2021, 9, 28, 02, 00, 0);
+            _rentalDataList.Add(new RentalData
+                { Id = "1", PricePerMinute = 1, StarTime = startTime4, EndTime = startTime4.AddDays(1) });
+
             //Act
             decimal result = _company.CalculateIncome(null, false);
 
             //Assert
-            Assert.AreEqual(30, result);
-
+            Assert.AreEqual(50, result);
         }
     }
 }

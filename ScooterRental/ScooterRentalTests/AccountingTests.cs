@@ -25,7 +25,7 @@ namespace ScooterRentalTests
             string id = null;
             DateTime startTime = DateTime.Now;
             _rentalDataList.Add(new RentalData
-            { Id = id, PricePerMinute = 1, StarTime = startTime, EndTime = startTime.AddMinutes(10) });
+                { Id = id, PricePerMinute = 1, StarTime = startTime, EndTime = startTime.AddMinutes(10) });
 
             //Act
             Action act = () => _accounting.CalculateBill(id);
@@ -41,7 +41,7 @@ namespace ScooterRentalTests
             string id = "2";
             DateTime startTime = DateTime.Now;
             _rentalDataList.Add(new RentalData
-            { Id = id, PricePerMinute = 1, StarTime = startTime, EndTime = startTime.AddMinutes(10) });
+                { Id = id, PricePerMinute = 1, StarTime = startTime, EndTime = startTime.AddMinutes(10) });
 
             //Act
             decimal result = _accounting.CalculateBill(id);
@@ -57,7 +57,7 @@ namespace ScooterRentalTests
             string id = "2";
             DateTime startTime = new DateTime(2021, 1, 1, 0, 0, 0);
             _rentalDataList.Add(new RentalData
-            { Id = id, PricePerMinute = 10, StarTime = startTime, EndTime = startTime.AddHours(1) });
+                { Id = id, PricePerMinute = 10, StarTime = startTime, EndTime = startTime.AddHours(1) });
 
             //Act
             decimal result = _accounting.CalculateBill(id);
@@ -71,9 +71,9 @@ namespace ScooterRentalTests
         {
             //Arrange
             string id = "2";
-            DateTime startTime = new DateTime(2021, 1, 1);
+            DateTime startTime = new DateTime(2021, 1, 1, 0, 0, 0);
             _rentalDataList.Add(new RentalData
-            { Id = id, PricePerMinute = 1, StarTime = startTime, EndTime = startTime.AddDays(3) });
+                { Id = id, PricePerMinute = 1, StarTime = startTime, EndTime = startTime.AddDays(3) });
 
             //Act
             decimal result = _accounting.CalculateBill(id);
@@ -87,9 +87,9 @@ namespace ScooterRentalTests
         {
             //Arrange
             string id = "2";
-            DateTime startTime = new DateTime(2021, 1, 1);
+            DateTime startTime = new DateTime(2021, 1, 1, 0, 0, 0);
             _rentalDataList.Add(new RentalData
-            { Id = id, PricePerMinute = 1, StarTime = startTime, EndTime = startTime.AddDays(3).AddMinutes(5) });
+                { Id = id, PricePerMinute = 1, StarTime = startTime, EndTime = startTime.AddDays(3).AddMinutes(5) });
 
             //Act
             decimal result = _accounting.CalculateBill(id);
@@ -97,7 +97,5 @@ namespace ScooterRentalTests
             //Assert
             Assert.AreEqual(65.0m, result);
         }
-
-
     }
 }
